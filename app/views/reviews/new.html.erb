@@ -4,7 +4,7 @@
 <%= form_for(@review) do |p| %>
     <div>
         <%= p.label :stars %>
-        <%= p.text_field :stars %>
+        <%= p.number_field :stars, min: 0, max: 5%>
     </div>
     <div>
         <%= p.label :title %>
@@ -14,3 +14,4 @@
         <%= p.label :content %>
         <%= p.text_field :content %>
     </div>
+        <%= p.hidden_field :pizza_id %>
