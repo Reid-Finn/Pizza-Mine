@@ -1,1 +1,8 @@
-Welcome <%= @user.username %>! You have signed in. Yaya
+<h1>Welcome <%= @user.username%>! </h1>
+
+<h3>Here are the pizzas reviewed by you:</h3>
+<ul>
+  <% @user.reviewed_pizzas.each do |p|%>
+  <li> <%= link_to p.name_and_company, pizza_path(p)%> </li>
+  <% end %>
+</ul>
