@@ -1,0 +1,32 @@
+<h1>Make A New Pizza!</h1>
+
+<p><%= flash[:error] %></p>
+
+<%= form_for(:user) do |f|%>
+ <div>
+  <%= f.label :type %>
+  <%= f.text_field :type %>
+ </div>
+ <div>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+ </div>
+
+  <p>Select a Company that already exists:</p>
+ <div>
+    <%= f.collection_select :company_id, Company.all, :id, :name %>
+
+ </div>
+
+
+  <p>Or create a new brand:</p>
+    <div>
+        <%= f.fields_for :company do |p| %>
+        <%= p.label :name %>
+        <%= p.text_field :name %>
+
+        <% end %>
+    </div>
+
+  <%= f.submit "Create" %>
+<% end %>
