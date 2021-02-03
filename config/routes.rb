@@ -1,18 +1,21 @@
 Rails.application.routes.draw do
-  
+
   get '/' => 'sessions#welcome'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   delete '/logout' => 'sessions#destroy'
-  get '/logout' => 'sessions#destroy'
-  
+  post '/pizzas/new' => 'pizzas#create'
+
+  get '/auth/:provider/callback' => 'sessions#create'
+
+
   resources :reviews
   resources :pizzas do
-    resources :review, only: [:new, :index]
+    resources :reviews, only: [:new, :index]
   end
   resources :companies
-  resources :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :users, only: [:show]
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

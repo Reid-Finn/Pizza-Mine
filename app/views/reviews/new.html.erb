@@ -1,4 +1,4 @@
-<h1>Leave a review for <%= @pizza %>!</h1>
+<h1>Leave a review for <%= @pizza.name %>!</h1>
 
 
 <%= form_for(@review) do |p| %>
@@ -15,3 +15,4 @@
         <%= p.text_field :content %>
     </div>
         <%= p.hidden_field :pizza_id %>
+<% end %>

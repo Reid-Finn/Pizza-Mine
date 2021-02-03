@@ -12,12 +12,14 @@ class PizzasController < ApplicationController
         else
             render :new
         end
+    end
 
+    def index
     end
 
     private
     
     def pizza_params
-        params.require(:pizza).permit(:type, :description, :company_id, company_attributes: [:name])
+        params.require(:pizza).permit(:name, :description, :company_id, company_attributes: [:name])
     end
 end

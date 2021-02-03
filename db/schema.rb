@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_02_02_165421) do
   end
 
   create_table "pizzas", force: :cascade do |t|
-    t.string "type"
+    t.string "name"
     t.string "description"
     t.integer "user_id"
     t.integer "company_id"
