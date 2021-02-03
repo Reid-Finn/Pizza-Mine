@@ -1,0 +1,19 @@
+<h1><%= @pizza.name%>  </h1>
+
+
+<% if @pizza.image.attached? %>
+  <%= image_tag url_for(@pizza.image) %>
+<% end %>
+
+<h2> <%= @pizza.company_name %> </h2>
+<div>
+  <p><%= @pizza.description %></p>
+</div>
+
+<h3>Added by: <%= link_to @pizza.user, user_path(@user)%> </h3>
+
+<%= link_to "Edit #{@pizza.name}", edit_pizza_path(@pizza) if @pizza.user == current_user%>
+
+<br></br>
+
+<%= link_to "See all Reviews", pizza_reviews_path(@pizza) %>
