@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
 
     def new
       if @pizza = Pizza.find_by_id(params[:pizza_id])
+        byebug
         @review = @pizza.reviews.build
       else
         @review = Review.new
