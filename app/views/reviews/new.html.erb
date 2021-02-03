@@ -1,0 +1,16 @@
+<h1>Leave a review for <%= @pizza %>!</h1>
+
+
+<%= form_for(@review) do |p| %>
+    <div>
+        <%= p.label :stars %>
+        <%= p.text_field :stars %>
+    </div>
+    <div>
+        <%= p.label :title %>
+        <%= p.text_field :title %>
+    </div>
+    <div>
+        <%= p.label :content %>
+        <%= p.text_field :content %>
+    </div>

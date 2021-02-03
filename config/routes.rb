@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   
   resources :reviews
-  resources :pizzas
+  resources :pizzas do
+    resources :review, only: [:new, :index]
+  end
   resources :companies
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
