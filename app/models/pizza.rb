@@ -25,7 +25,7 @@ class Pizza < ApplicationRecord
     end
   
     def not_a_duplicate
-      # if there is already an ice cream with that flavor && brand, throw an error
+      byebug
       pizza = Pizza.find_by(name: name, pizza_id: pizza_id)
       if !!pizza && pizza != self
         errors.add(:name, 'has already been added for that brand')
