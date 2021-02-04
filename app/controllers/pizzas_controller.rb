@@ -21,6 +21,7 @@ class PizzasController < ApplicationController
   
     def index
       @pizza = Pizza.all
+      
     end
   
     def show

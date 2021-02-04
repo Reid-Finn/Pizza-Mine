@@ -3,12 +3,12 @@
     <ol>
         <% @pizza.each do |p| %>
         
-        <h1><%= p.name%>  </h1>
+        <h1>Pizza Name:<%= p.name%>  </h1>
 
 
-        <h2><%= p.company %> </h2>
+        <h2>Company Name:<%= p.company.name %> </h2>
 
-        <h3><%= p.description %></h3>
+        <h3>Description: <%= p.description %></h3>
 
     </ol>
 

@@ -5,10 +5,10 @@
 <% end %>
 
 <ul>
-<% @reviews.each do |review| %>
+<% @reviews.each do |r| %>
 
   <li>
-    <%= @review.pizza.name%>: <%= link_to @review.title, review_path(review)%> - <%= @review.stars%>
+     <%= link_to r.title, review_path(r)%> - <%= r.stars%>
   </li> <br>
 
 <% end %>

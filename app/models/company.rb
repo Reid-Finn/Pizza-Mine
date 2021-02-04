@@ -1,4 +1,7 @@
 class Company < ApplicationRecord
     has_many :pizzas
-    
-end
+    validates :name, presence: true, uniqueness: true
+  
+   
+  
+  end
