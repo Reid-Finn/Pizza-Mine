@@ -1,22 +1,15 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>PizzaMine</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <div>
-    <%= link_to "Log Out", logout_path, method: "delete" %>
-    <%= link_to "Add a Pizza", new_pizza_path %>
-  
-  
-  </div>
-  
-  
+   <div><%= render_nav_bar %></div>
+
   <body>
     <%= yield %>
   </body>

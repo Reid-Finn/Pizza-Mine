@@ -2,7 +2,7 @@
 
 <p><%= flash[:error] %></p>
 
-<%= form_for(:user) do |f|%>
+<%= form_for(@pizza) do |f| %>
  <div>
   <%= f.label :name %>
   <%= f.text_field :name %>

@@ -1,1 +1,15 @@
 <h1>Testing page for index</h1>
+
+    <ol>
+        <% @pizza.each do |p| %>
+        
+        <h1><%= p.name%>  </h1>
+
+
+        <h2><%= p.company %> </h2>
+
+        <h3><%= p.description %></h3>
+
+    </ol>
+
+<% end %>

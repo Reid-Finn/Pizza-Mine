@@ -3,8 +3,9 @@ class ReviewsController < ApplicationController
 
 
   def new
-    if @pizza = Pizza.find_by_id(params[:pizza_id])
+    if @pizza = Pizza.find_by_id(params[:id])
       @review = @pizza.reviews.build
+      byebug
     else
       @review = Review.new
     end
@@ -24,7 +25,7 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    #how do i check if it's nested & a valid id
+    #how i check if it's nested & a valid id
     if @pizza = Pizza.find_by_id(params[:pizza_id])
       #nested
       @reviews = @pizza.reviews
@@ -39,3 +40,4 @@ class ReviewsController < ApplicationController
   def review_params
       params.require(:review).permit(:pizza_id, :content, :stars, :title)
   end
+end

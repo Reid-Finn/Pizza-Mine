@@ -1,0 +1,9 @@
+<h1> testing out mypizza</h1>
+
+
+<h1>Hello, <%= @user.username %>! Here are your Pizzas!</h1>
+
+<% @user.each do |p| %>
+    <%= p.name %>
+    
+<% end %>
