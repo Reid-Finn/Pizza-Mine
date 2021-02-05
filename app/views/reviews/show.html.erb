@@ -4,4 +4,6 @@
 <p><h2>Review:</h2> <%= @review.content%></p> 
 
 <h3> Review made by: <%= "#{@review.user.username}" %>
-<%= link_to "Edit #{@review.title}", edit_review_path %>
+<% if current_user == @review.user %>
+<%= link_to "Edit", edit_review_path %>
+    <% end %>

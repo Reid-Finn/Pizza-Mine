@@ -3,7 +3,8 @@
     <ol>
         <% @pizza.each do |p| %>
         
-        <h2>Pizza Name:<%=  link_to "#{p.name}", pizza_path(p) %>  <%= link_to "Edit", edit_pizza_path(@pizza) %></h2>
+        <h2>Pizza Name:<%=  link_to "#{p.name}", pizza_path(p) %>  
+        <%= link_to "Edit", edit_pizza_path(@pizza) if current_user == p.user %></h2>
 
 
         <h2>Company Name:<%= p.company.name %> </h2>
