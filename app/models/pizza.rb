@@ -25,8 +25,7 @@ class Pizza < ApplicationRecord
     end
   
     def not_a_duplicate
-      byebug
-      pizza = Pizza.find_by(name: name, pizza_id: pizza_id)
+      pizza = Pizza.find_by(name: name)
       if !!pizza && pizza != self
         errors.add(:name, 'has already been added for that brand')
       end

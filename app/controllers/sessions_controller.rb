@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :redirect_if_not_logged_in, except:[:new, :create]
+  before_action :redirect_if_not_logged_in, except:[:new, :create, :welcome]
 
     def welcome
       

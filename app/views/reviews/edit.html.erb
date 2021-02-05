@@ -1,0 +1,34 @@
+<h1>Editting reviews</h1>
+
+
+
+<%= form_for(@review) do |f|%>
+  <% if params[:pizza_id] %>
+    <%= f.hidden_field :pizza_id %>
+  <% else %>
+    <div>
+      <%= f.label :pizza_id, "Select a Pizza" %>
+      <%= f.collection_select :pizza_id, Pizza.alpha, :id, :name_and_company, include_blank: true %>
+    </div>
+  <% end %>
+  <div>
+    <%= f.label :stars %>
+    <%= f.number_field :stars, min:0, max:5 %>
+  </div>
+  <br>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <br>
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content, size: "25x10" %>
+  </div>
+  <br>
+
+
+
+  <%= f.submit %>
+
+<% end %>

@@ -21,18 +21,18 @@ class PizzasController < ApplicationController
   
     def index
       @pizza = Pizza.all
+
+
       
     end
   
     def show
       @user = User.find(session[:user_id])
       @pizza = Pizza.find_by_id(params[:id])
-      #byebug
       
     end
   
     def edit
-
     end
   
     def update
@@ -55,7 +55,7 @@ class PizzasController < ApplicationController
     end
   
     def set_pizza
-       @pizza = Pizza.find_by(params[:id])
+       @pizza = Pizza.find_by(params[:pizza_id])
        redirect_to pizzas_path if !@pizza
     end
   

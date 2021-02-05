@@ -3,14 +3,15 @@
     <ol>
         <% @pizza.each do |p| %>
         
-        <h1>Pizza Name:<%= p.name%>  </h1>
+        <h2>Pizza Name:<%=  link_to "#{p.name}", pizza_path(p) %>  <%= link_to "Edit", edit_pizza_path(@pizza) %></h2>
 
 
         <h2>Company Name:<%= p.company.name %> </h2>
 
         <h3>Description: <%= p.description %></h3>
 
-        <%= link_to "Review this Pizza!", "review" %>
+        <%= link_to "Review this Pizza!", new_pizza_review_path(p) %>
+        <%= link_to "See All Reviews For this Pizza!", pizza_reviews_path(p) %>
 
     </ol>
 
