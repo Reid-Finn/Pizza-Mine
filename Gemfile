@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
+gem 'dotenv-rails'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-google-oauth2'
 

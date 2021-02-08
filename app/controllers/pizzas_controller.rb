@@ -1,6 +1,6 @@
 class PizzasController < ApplicationController
     before_action :set_pizza, only:[:show, :edit, :update]
-    before_action :redirect_if_not_logged_in, except:[:new, :create]
+    before_action :redirect_if_not_logged_in
   
     def new
       @pizza = Pizza.new

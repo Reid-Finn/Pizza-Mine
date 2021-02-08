@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Thank you for using PizzaMine! The most average Pizza reviewing site in the world!
 
-* Ruby version
+To get started:
 
-* System dependencies
+    Make sure to submit 'bundle install' to ensure all gems are installed.
+    before starting the server, please run 'rake db:migrate' and 'rake db:migrate' to get all nessesary databases set up
+    run command 'rails s' to start the server!
+    Enjoy!
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    *please note, if you recieve a Javascript error, please reinstall node to a older version then you currently have*
