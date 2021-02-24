@@ -4,8 +4,8 @@ class User < ApplicationRecord
   
     has_many :pizzas 
   
-    validates :username, uniqueness: true,  presence: true
-    validates :email, presence: true
+    validates :username,  presence: true
+    validates :email, uniqueness: true, presence: true
   
     has_secure_password
   

@@ -36,12 +36,12 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    #how i check if it's nested & a valid id
+    
     if @pizza = Pizza.find_by_id(params[:pizza_id])
       #nested
       @reviews = @pizza.reviews
     else
-      #it's not nested
+    
       @reviews = Review.all
     end
   end

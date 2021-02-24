@@ -1,6 +1,7 @@
 <h1>Make A New Pizza!</h1>
 
 <p><%= flash[:error] %></p>
+<%= render partial: 'layouts/errors', locals: {object: @pizza}  %>
 
 <%= form_for(@pizza) do |f| %>
  <div>
