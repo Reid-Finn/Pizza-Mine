@@ -4,3 +4,12 @@
 <%= link_to "Add a Review", new_review_path %> |
 <%= link_to "All Reviews", reviews_path %> |
 <%= link_to "All Companies", companies_path %> |
+
+
+<%= form_tag(search_companies_path, method: :get) do %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search" %>
+        </p>
+      <% end %>
+

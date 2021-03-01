@@ -23,11 +23,18 @@ class ReviewsController < ApplicationController
     @review = Review.find_by_id(params[:id])
   end
 
+  #def update
+    #if @review.save
+      #redirect_to review_path(@review)
+    #else
+      #render :new
+    #end
+  #end
   def update
-    if @review.save
+    if @review.update(review_params)
       redirect_to review_path(@review)
     else
-      render :new
+      render :edit
     end
   end
 

@@ -39,5 +39,17 @@ class Pizza < ApplicationRecord
       "#{name} - #{company.try(:name)}"
     end
   
+    #def self.search(search)
+      #byebug
+      #if search
+        #pizza = Pizza.find_by(name: search)
+        #if pizza
+          #self.where(pizza_id: pizza)
+      #else
+        #self.all
+      #end
+    #end
+    #end
+
   
   end

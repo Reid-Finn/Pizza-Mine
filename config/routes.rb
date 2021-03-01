@@ -10,10 +10,18 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#omniauth'
   #get '/auth/:google_oauth2' => 'sessions#omniauth'
   
+ 
+
   
-  resources :companies
+  
+  resources :companies do
+    collection do
+      get 'search'
+    end
+  end
   resources :reviews
   resources :pizzas do
+    
     resources :reviews, only: [:new, :index]
   end
 

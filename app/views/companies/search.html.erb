@@ -1,0 +1,19 @@
+<h1>PizzaMine Pizzas!</h1>
+
+    <ol>
+        <% @pizza.each do |p| %>
+        
+        <h2>Pizza Name:<%=  link_to "#{p.name}", pizza_path(p) %>  
+        
+
+
+        <h2>Company Name:<%= p.company.name %> </h2>
+
+        <h3>Description: <%= p.description %></h3>
+
+        <%= link_to "Review this Pizza!", new_pizza_review_path(p) %>
+        <%= link_to "See All Reviews For this Pizza!", pizza_reviews_path(p) %>
+
+    </ol>
+
+<% end %>

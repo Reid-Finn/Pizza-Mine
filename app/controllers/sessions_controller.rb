@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  #before_action :redirect_if_not_logged_in, except:[:new, :create, :welcome, :google]
+  before_action :redirect_if_not_logged_in, except:[:new, :create, :welcome, :omniauth]
 
     def welcome
       
@@ -14,12 +14,6 @@ class SessionsController < ApplicationController
     end
     
     def create
-
-      #if params[:provider] == 'google_oauth2'
-        #@user = User.create(auth)
-        #session[:user_id] = @user.id
-        #redirect_to user_path(@user)
-      #else
   
         @user = User.find_by(username: params[:user][:username])
         if @user.try(:authenticate, params[:user][:password])
@@ -29,18 +23,14 @@ class SessionsController < ApplicationController
           flash[:error] = "Sorry, login info was incorrect. Please try again."
           redirect_to login_path
         end
-      #end
+    
     end
 
     def omniauth  #log users in with omniauth
-      #byebug
-    user = User.find_or_create_by(email: auth['info']['email'], username: auth['info']['name']) do |u|
-      #byebug
-      u.password = SecureRandom.hex(10)
-      #byebug
-
-    end
-    #byebug
+      
+      user = User.find_or_create_by(email: auth['info']['email'], username: auth['info']['name']) do |u|
+        u.password = SecureRandom.hex(10)
+      end
     if user.save
         session[:user_id] = user.id
         redirect_to pizzas_path
